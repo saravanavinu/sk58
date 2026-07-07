@@ -1,0 +1,125 @@
+do $$
+declare
+    n int := 10;
+begin
+    if n % 2 = 0 then
+        raise notice '% is even', n;
+    else
+        raise notice '% is odd', n;
+    end if;
+end;
+$$;
+
+
+
+do $$
+declare
+    a int := 10;
+    b int := 20;
+    c int := 15;
+begin
+    if a >= b and a >= c then
+        raise notice 'greatest = %', a;
+    elsif b >= a and b >= c then
+        raise notice 'greatest = %', b;
+    else
+        raise notice 'greatest = %', c;
+    end if;
+end;
+$$;
+
+
+
+do $$
+declare
+    age int := 20;
+begin
+    if age >= 18 then
+        raise notice 'eligible for voting';
+    else
+        raise notice 'not eligible for voting';
+    end if;
+end;
+$$;
+
+
+
+do $$
+declare
+    i int;
+begin
+    for i in 1..10 loop
+        raise notice '%', i;
+    end loop;
+end;
+$$;
+
+
+
+do $$
+declare
+    i int;
+    sum int := 0;
+begin
+    for i in 1..10 loop
+        sum := sum + i;
+    end loop;
+    raise notice 'sum = %', sum;
+end;
+$$;
+
+
+
+do $$
+declare
+    n int := 5;
+    i int;
+begin
+    for i in 1..10 loop
+        raise notice '% x % = %', n, i, n * i;
+    end loop;
+end;
+$$;
+
+
+
+do $$
+declare
+    n int := 5;
+    i int;
+    fact int := 1;
+begin
+    for i in 1..n loop
+        fact := fact * i;
+    end loop;
+    raise notice 'factorial = %', fact;
+end;
+$$;
+
+
+
+do $$
+declare
+    i int;
+begin
+    for i in 1..20 loop
+        if i % 2 = 0 then
+            raise notice '%', i;
+        end if;
+    end loop;
+end;
+$$;
+
+
+
+do $$
+declare
+    i int;
+begin
+    for i in 1..20 loop
+        if i % 2 <> 0 then
+            raise notice '%', i;
+        end if;
+    end loop;
+end;
+$$;
